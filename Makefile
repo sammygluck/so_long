@@ -29,8 +29,8 @@ $(NAME): $(OBJ)
 	@$(MAKE) -C $(MLXDIR)
 	@$(MAKE) -C $(LIBFTDIR)
 	@$(MAKE) -C $(PRINTFDIR)
-	@$(MAKE) -C $(GNLDIR)
-	@$(CC) $(CFLAGS) $(OBJ) $(MLX) $(LIBFT) $(PRINTF) $(GNL) -o $(NAME)
+	$(MAKE) -C $(GNLDIR)
+	$(CC) $(CFLAGS) $(OBJ) $(MLX) $(LIBFT) $(PRINTF) $(GNL) -o $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) -O3 -c $< -o $@
