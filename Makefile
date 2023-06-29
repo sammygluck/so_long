@@ -7,12 +7,12 @@ OBJ= $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 BINDIR= bin
 
 #external projects
-#LIBFTDIR = 
-#LIBFT =
-#PRINTFDIR = 
-#PRINTF = 
-#GNLDIR = 
-#GNL =
+LIBFTDIR = libft
+LIBFT = $(LIBFTDIR)/libft.a
+PRINTFDIR = ft_printf
+PRINTF = $(PRINTFDIR)/libftprintf.a
+GNLDIR = gnl 
+GNL = $(GNLDIR)/gnl.a
 MLXDIR = mlx_linux
 MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 #MLX_I =
@@ -27,7 +27,10 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(MAKE) -C $(MLXDIR)
-	@$(CC) $(CFLAGS) $(OBJ) $(MLX) -o $(NAME)
+	@$(MAKE) -C $(LIBFT)
+	@$(MAKE) -C $(PRINTF)
+	@$(MAKE) -C $(GNL)
+	@$(CC) $(CFLAGS) $(OBJ) $(MLX) $(LIBFT) $(PRINTFDIR) $(GNL) -o $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@
