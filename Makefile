@@ -9,7 +9,7 @@ BINDIR= bin
 #external projects
 LIBFTDIR = libft
 PRINTFDIR = ft_printf
-GNLDIR = gnl 
+GNLDIR = gnl
 LIBFT = $(LIBFTDIR)/libft.a
 PRINTF = $(PRINTFDIR)/libftprintf.a
 GNL = $(GNLDIR)/gnl.a
