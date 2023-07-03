@@ -39,11 +39,11 @@ static void add_line_to_map(char *line, t_map *map)
         tmp = map->map;
         new_line = ft_strjoin(map->map, line);
         // need to cook a correct error formula for this
-        if (ft_strlen(new_line) != map->x)
+        if (ft_strlen(line) != map->x)
             ft_printf("Error: x length not equal");
         free(tmp);
         map->map = new_line;
-        ft_printf("%i: subsequent x-es", map->x);
+        ft_printf("%i: subsequent x-es after\n", map->x);
     }
 
     //other lines
