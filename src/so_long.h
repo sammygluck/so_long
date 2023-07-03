@@ -19,5 +19,6 @@ typedef struct s_map
 
 void    init_map(t_map *map);
 char get_value(t_map *map, int x, int y);
+int validate_borders(t_map *map);
 
 #endif
