@@ -39,7 +39,7 @@ static void add_line_to_map(char *line, t_map *map)
         tmp = map->map;
         new_line = ft_strjoin(map->map, line);
         // need to cook a correct error formula for this
-        if (ft_strlen(line) != map->x)
+        if (ft_strlen(line) != (size_t)map->x)
             ft_printf("Error: x length not equal");
         free(tmp);
         map->map = new_line;
