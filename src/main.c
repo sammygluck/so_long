@@ -80,7 +80,7 @@ void    init_map()
         //make sure to add to the y value each time
         map->y += 1;
     }
-    
+    ft_printf("%s", map->map);
 }
 
 int main(int argc, char **argv)
