@@ -26,7 +26,7 @@ static void add_line_to_map(char *line, t_map *map)
         map->map = malloc(ft_strlen(line));
         //make sure we deal correctly with the error
         if (!(map->map))
-            return (0);
+            return ;
         map->x = ft_strlen(line);
         //validate the length (make sure it's the minimum required length) at least 4 if not more
 
