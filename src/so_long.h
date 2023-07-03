@@ -10,4 +10,13 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
+typedef struct s_map
+{
+    char *map;
+    int x;
+    int y;
+} t_map;
+
+void    init_map(t_map *map);
+
 #endif
