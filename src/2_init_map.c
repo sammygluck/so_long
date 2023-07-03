@@ -80,5 +80,5 @@ void    init_map(t_map *map)
     print_map(map);
     int border_control;
     border_control = validate_borders(map);
-    printf("%i\n", border_control)   
+    printf("%i\n", border_control);
 }
