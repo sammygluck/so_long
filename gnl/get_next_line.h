@@ -25,6 +25,6 @@ char	*extract(char *stock);
 char	*clean(char *stock);
 char	*ft_strjoin_gnl(char *stock, char *buffer);
 int		check_newline(char *stock);
-int		ft_strlen(char *str);
+size_t		ft_strlen(const char *str);
 
 #endif 
