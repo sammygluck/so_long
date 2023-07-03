@@ -5,7 +5,8 @@ char get_value(t_map *map, int x, int y)
     char value;
     int index;
 
-    index = y * map->x + x;
+    //what's if it's zero or less??
+    index = (y - 1) * map->x + (x - 1);
     value = map->map[index];
     return (value);
 }
