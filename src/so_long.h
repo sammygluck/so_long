@@ -18,5 +18,6 @@ typedef struct s_map
 } t_map;
 
 void    init_map(t_map *map);
+char get_value(t_map *map, int x, int y);
 
 #endif
