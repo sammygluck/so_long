@@ -23,6 +23,9 @@ void strip_newline(char *line)
 
 void add_line_to_map(char *line, t_map *map)
 {
+
+    char *tmp;
+    char *new_line;
     //we also have to strip the newline characters at the end
     strip_newline(line);
 
@@ -42,6 +45,13 @@ void add_line_to_map(char *line, t_map *map)
         //copy the string to the map->map stuff 
         map->map = ft_strdup(line);
          //should we free line now or in the parent of this function (current implemenation: parent at the end)
+    }
+    else
+    {
+        tmp = map->map;
+        new_line = ft_strjoin(map->map, line);
+        free(tmp);
+        map->map = new_line;
     }
 
     //other lines
