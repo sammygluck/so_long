@@ -77,5 +77,5 @@ void    init_map(t_map *map)
         //make sure to add to the y value each time
         map->y += 1;
     }
-    validate_borders(map);   
+    print_map(map);   
 }

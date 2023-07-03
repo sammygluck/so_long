@@ -1,6 +1,6 @@
 #include "so_long.h"
 
-int validate_borders(t_map *map)
+int print_map(t_map *map)
 {
     int y;
     int x;
