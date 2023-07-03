@@ -85,5 +85,9 @@ void    init_map()
 
 int main(int argc, char **argv)
 {
+    //to adjust afterwards
+    (void) argc;
+    (void) argv;
+
     init_map();
 }
