@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-size_t ft_strlen(const char *str)
+int ft_strlen_gnl(char *str)
 {
 	int	i;
 
@@ -51,7 +51,7 @@ char	*ft_strjoin_gnl(char *stock, char *buffer)
 		stock = malloc(1);
 		stock[0] = '\0';
 	}
-	new = malloc(ft_strlen(stock) + ft_strlen(buffer) + 1);
+	new = malloc(ft_strlen_gnl(stock) + ft_strlen_gnl(buffer) + 1);
 	if (!new)
 	{	
 		free(stock);

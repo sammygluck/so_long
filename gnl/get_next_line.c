@@ -26,7 +26,7 @@ char	*clean(char *stock)
 		return (NULL);
 	}
 	i++;
-	cleaned = malloc(ft_strlen(stock) - i + 2);
+	cleaned = malloc(ft_strlen_gnl(stock) - i + 2);
 	if (!cleaned)
 	{
 		free(stock);
