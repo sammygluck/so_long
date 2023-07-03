@@ -12,5 +12,4 @@ int main(int argc, char **argv)
     if (!map)
         ft_printf("error to be handled still");
     init_map(map);
-    ft_printf("%s", map->map);
 }
