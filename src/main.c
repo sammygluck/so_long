@@ -51,7 +51,7 @@ int add_line_to_map(char *line, t_map *map)
 }
 
 
-char    *init_map()
+void    init_map()
 {
     t_map   *map;
     char *line;
@@ -66,6 +66,9 @@ char    *init_map()
     map->x = 0;
     map->y = 0;
     
+    //call gnl until end
+    //for every call we'll join unto the previous string
+    //we also have to differentiate between the first, last and rest of the strings
     while (1)
     {
        
@@ -77,9 +80,7 @@ char    *init_map()
         //make sure to add to the y value each time
         map->y += 1;
     }
-    //call gnl until end
-    //for every call we'll join unto the previous string
-    //we also have to differentiate between the first, last and rest of the strings
+    
 }
 
 int main(int argc, char **argv)
