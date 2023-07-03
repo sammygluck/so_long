@@ -32,6 +32,7 @@ static void add_line_to_map(char *line, t_map *map)
 
         map->map = ft_strdup(line);
          //should we free line now or in the parent of this function (current implemenation: parent at the end)
+         ft_printf("%i: first x\n", map->x);
     }
     else
     {
@@ -42,6 +43,7 @@ static void add_line_to_map(char *line, t_map *map)
             ft_printf("Error: x length not equal");
         free(tmp);
         map->map = new_line;
+        ft_printf("%i: subsequent x-es", map->x);
     }
 
     //other lines
