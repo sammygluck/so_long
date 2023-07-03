@@ -77,5 +77,5 @@ void    init_map(t_map *map)
         //make sure to add to the y value each time
         map->y += 1;
     }
-    get_value(map, 3, 2);
+    ft_printf("%c\n", get_value(map, 3, 2));
 }
