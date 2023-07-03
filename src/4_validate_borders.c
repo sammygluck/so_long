@@ -6,10 +6,10 @@ int validate_borders(t_map *map)
     int x;
 
     y = 1;
-    x = 1;
 
     while(y <= map->y)
     {
+        x = 1;
         while(x <= map->x)
         {
             ft_printf("%c", get_value(map, x, y));
