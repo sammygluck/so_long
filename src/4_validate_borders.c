@@ -14,13 +14,13 @@ int validate_borders(t_map *map)
         while(x <= map->x)
         {
             current_value = get_value(map, x, y);
-            if (y == 1 && current_value != 1)
+            if (y == 1 && current_value != '1')
                 return (1);
-            else if (y == map->y && current_value != 1)
+            else if (y == map->y && current_value != '1')
                 return (1);
-            else if (x == 1 && current_value != 1)
+            else if (x == 1 && current_value != '1')
                 return (1);
-            else if (x == map -> x && current_value != 1)
+            else if (x == map -> x && current_value != '1')
                 return (1);
             x++;
         }
