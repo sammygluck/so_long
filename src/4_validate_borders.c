@@ -25,7 +25,6 @@ int validate_borders(t_map *map)
             x++;
         }
         y++;
-        ft_printf("\n");
     }
     return (0);
 }
