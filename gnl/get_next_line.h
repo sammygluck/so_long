@@ -23,7 +23,7 @@ char	*get_next_line(int fd);
 char	*reader(int fd, char *stock);
 char	*extract(char *stock);
 char	*clean(char *stock);
-char	*ft_strjoin(char *stock, char *buffer);
+char	*ft_strjoin_gnl(char *stock, char *buffer);
 int		check_newline(char *stock);
 int		ft_strlen(char *str);
 

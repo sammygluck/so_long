@@ -87,7 +87,7 @@ char	*reader(int fd, char *stock)
 			return (NULL);
 		}
 		buffer[read_ch] = '\0';
-		stock = ft_strjoin(stock, buffer);
+		stock = ft_strjoin_gnl(stock, buffer);
 	}
 	free(buffer);
 	return (stock);

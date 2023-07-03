@@ -40,7 +40,7 @@ int	check_newline(char *stock)
 	return (0);
 }
 
-char	*ft_strjoin(char *stock, char *buffer)
+char	*ft_strjoin_gnl(char *stock, char *buffer)
 {
 	char	*new;
 	int		i;
