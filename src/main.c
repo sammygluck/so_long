@@ -21,7 +21,7 @@ void strip_newline(char *line)
     }
 }
 
-int add_line_to_map(char *line, t_map *map)
+void add_line_to_map(char *line, t_map *map)
 {
     //we also have to strip the newline characters at the end
     strip_newline(line);
@@ -59,7 +59,7 @@ void    init_map()
 
     fd = open("map.ber", O_RDONLY);
     //error check
-    map = malloc(sizeof t_map);
+    map = malloc(sizeof (t_map));
     if (!map)
         ft_printf("error to be handled still");
     //might need to find a better place for this potentially:
