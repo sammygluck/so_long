@@ -29,10 +29,6 @@ int validate_borders(t_map *map)
     return (0);
 }
 
-
-
-
-
 int print_map(t_map *map)
 {
     int y;
