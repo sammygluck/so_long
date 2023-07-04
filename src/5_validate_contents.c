@@ -1,6 +1,6 @@
 #include "so_long.h"
 
-int get_char_count(char *string, char character)
+static int get_char_count(char *string, char character)
 {
     int i;
     int count;
@@ -16,7 +16,7 @@ int get_char_count(char *string, char character)
     return (count);
 }
 
-int all_valid_char(char *string)
+static int all_valid_char(char *string)
 {
     int i;
 
