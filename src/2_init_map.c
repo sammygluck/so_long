@@ -78,9 +78,6 @@ void    init_map(t_map *map)
         map->y += 1;
     }
     print_map(map);
-    int border_control;
     if(!validate_map(map))
         ft_printf("something wrong with map");
-    
-    printf("%i\n", border_control);
 }
