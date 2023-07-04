@@ -12,5 +12,5 @@ int main(int argc, char **argv)
     init_map(map->map);
     data.map = map;
     ft_printf("\n datamap: %s", data.map);
-    map_to_window();
+    //map_to_window();
 }
