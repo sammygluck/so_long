@@ -15,18 +15,18 @@ int validate_borders(t_map *map)
         {
             current_value = get_value(map, x, y);
             if (y == 1 && current_value != '1')
-                return (1);
+                return (0);
             else if (y == map->y && current_value != '1')
-                return (1);
+                return (0);
             else if (x == 1 && current_value != '1')
-                return (1);
+                return (0);
             else if (x == map -> x && current_value != '1')
-                return (1);
+                return (0);
             x++;
         }
         y++;
     }
-    return (0);
+    return (1);
 }
 
 int print_map(t_map *map)
