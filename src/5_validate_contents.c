@@ -36,7 +36,7 @@ int validate_contents(t_map *map)
         return (0);
     if (get_char_count(map->map, 'C') < 1)
         return (0);
-    if (get_char_count(map->map), 'E' != 1)
+    if (get_char_count(map->map, 'E') != 1)
         return (0);
     if (get_char_count(map->map, 'P') != 1)
         return (0);

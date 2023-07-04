@@ -17,13 +17,6 @@ typedef struct s_map
     int y;
 } t_map;
 
-typedef struct s_item_count
-{
-    int begin_position;
-    int exit_position;
-    int collectibles;
-}
-
 void    init_map(t_map *map);
 char get_value(t_map *map, int x, int y);
 int print_map(t_map *map);
