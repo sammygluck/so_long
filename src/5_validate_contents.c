@@ -45,3 +45,12 @@ int validate_contents(t_map *map)
     return (1);
 
 }
+
+int validate_map(t_map *map)
+{
+    if (!validate_borders(map))
+        return (0);
+    if (!validate_contents(map))
+        return (0);
+    return (1);
+}

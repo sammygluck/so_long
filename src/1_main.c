@@ -9,7 +9,7 @@ int main(int argc, char **argv)
     map = malloc(sizeof (t_map));
     if (!map)
         ft_printf("error to be handled still");
-    init_map(map->map);
+    init_map(map);
     data.map = map;
     ft_printf("\n datamap: %s", data.map);
     //map_to_window();
