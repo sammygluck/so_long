@@ -79,6 +79,8 @@ void    init_map(t_map *map)
     }
     print_map(map);
     int border_control;
-    border_control = validate_borders(map);
+    if(!validate_map(map))
+        ft_printf("something wrong with map");
+    
     printf("%i\n", border_control);
 }
