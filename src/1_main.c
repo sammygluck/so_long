@@ -10,7 +10,7 @@ int main(int argc, char **argv)
     if (!map)
         ft_printf("error to be handled still");
     init_map(map);
-    data.map = &map;
-    ft_printf("\n datamap: %s", data.map);
+    data.map = map;
+    ft_printf("\n datamap: %s", data.map->map);
     //map_to_window();
 }
