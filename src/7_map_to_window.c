@@ -35,6 +35,8 @@ static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images
 {
     int y;
     int x;
+    int width;
+    int height;
 
     y = 0;
 
@@ -43,6 +45,7 @@ static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images
         x = 0;
         while(x < map->x)
         {
+            images.wall = mlx_xpm_file_to_image(mlx, "assets/sprites/wall.xpm", &width, &height);
             mlx_put_image_to_window(mlx, mlx_win, images.wall, x, y);
             x++;
         }
