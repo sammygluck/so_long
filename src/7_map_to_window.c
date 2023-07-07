@@ -63,5 +63,6 @@ void map_to_window(t_map *data)
     mlx_win = mlx_new_window(mlx, data->x * 32, data->y * 32, "so_long");
     set_image_values(mlx, &images);
     place_images(mlx, mlx_win, data, images);
+    mlx_loop(mlx);
 
 }
