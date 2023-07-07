@@ -11,7 +11,7 @@ int main(int argc, char **argv)
         ft_printf("error to be handled still");
     init_map(map);
     data.map = map;
-    map_to_window(&(data.map));
+    map_to_window(data.map);
     ft_printf("\ndatamap: %s", data.map->map);
     //map_to_window();
 }
