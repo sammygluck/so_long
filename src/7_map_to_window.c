@@ -43,7 +43,7 @@ static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images
         x = 0;
         while(x < map->x)
         {
-            mlx_put_image_to_window(mlx, mlx_win, &(images.wall), x, y);
+            mlx_put_image_to_window(mlx, mlx_win, images.wall, x, y);
             x++;
         }
         y++;
