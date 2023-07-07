@@ -44,7 +44,7 @@ static void setup_image(void *mlx, void *mlx_win, t_img_types images, t_map *map
     else if (get_value(map, x, y) == 'E')
         mlx_put_image_to_window(mlx, mlx_win, images.exit, x * 32, y * 32);
     else
-        printf("error setup image\n");
+        printf("error setup image %c\n", get_value(map, x, y));
 }
 
 static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images)
