@@ -33,7 +33,18 @@ static void set_image_values(void *mlx, t_img_types *images)
 
 static void setup_image(void *mlx, void *mlx_win, t_img_types images, t_map *map, int x, int y)
 {
-    mlx_put_image_to_window(mlx, mlx_win, images.wall, x * 32, y * 32);
+    if (get_value(map, x, y) == '1')
+        mlx_put_image_to_window(mlx, mlx_win, images.wall, x * 32, y * 32);
+    else if (get_value(map, x, y) == '0')
+        mlx_put_image_to_window(mlx, mlx_win, images.floor, x * 32, y * 32);
+    else if (get_value(map, x, y) == 'C')
+        mlx_put_image_to_window(mlx, mlx_win, images.collectible, x * 32, y * 32);
+    else if (get_value(map, x, y) == 'P')
+        mlx_put_image_to_window(mlx, mlx_win, images.player, x * 32, y * 32);
+    else if (get_value(map, x, y) == 'E')
+        mlx_put_image_to_window(mlx, mlx_win, images.exit, x * 32, y * 32);
+    else
+        printf("error setup image\n");
 }
 
 static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images)
