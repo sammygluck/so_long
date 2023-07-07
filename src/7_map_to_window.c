@@ -31,7 +31,7 @@ static void set_image_values(void *mlx, t_img_types *images)
 
 }
 
-static setup_image(void *mlx, void *mlx_win, t_img_types images, t_map *map, int x, int y)
+static void setup_image(void *mlx, void *mlx_win, t_img_types images, t_map *map, int x, int y)
 {
     mlx_put_image_to_window(mlx, mlx_win, images.wall, x * 32, y * 32);
 }
