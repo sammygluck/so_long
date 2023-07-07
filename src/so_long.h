@@ -31,6 +31,6 @@ int validate_contents(t_map *map);
 int validate_map(t_map *map);
 void check_input(int argc, char **argv);
 
-void map_to_window(t_map data);
+void map_to_window(t_map *data);
 
 #endif
