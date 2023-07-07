@@ -59,7 +59,7 @@ static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images
         x = 0;
         while(x < map->x)
         {
-            setup_image(mlx, mlx_win, images, map, x, y);
+            setup_image(mlx, mlx_win, images, map, x + 1, y + 1);
             x++;
         }
         y++;
