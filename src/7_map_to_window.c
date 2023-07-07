@@ -40,8 +40,6 @@ static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images
 {
     int y;
     int x;
-    int width;
-    int height;
 
     y = 0;
 
