@@ -50,12 +50,14 @@ static void add_line_to_map(char *line, t_map *map)
     
 }
 
-void    init_map(t_map *map)
+void    init_map(t_game *game)
 {
     
     char *line;
     int fd;
+    t_map *map;
 
+    map = game->map;
     fd = open("map.ber", O_RDONLY);
     //error check
  
@@ -68,15 +70,14 @@ void    init_map(t_map *map)
     //we also have to differentiate between the first, last and rest of the strings
     while (1)
     {
-       
         line = get_next_line(fd);
         if (!line)
             break;
         add_line_to_map(line, map);
         free(line);
-        //make sure to add to the y value each time
         map->y += 1;
     }
+    set_player_start_position(game);
     print_map(map);
     if(!validate_map(map))
         ft_printf("something wrong with map");

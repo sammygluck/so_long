@@ -10,3 +10,29 @@ char get_value(t_map *map, int x, int y)
     value = map->map[index];
     return (value);
 }
+
+void set_player_start_position(t_game *game)
+{
+    int y;
+    int x;
+    t_map *map;
+    t_player *player;
+
+    player = &(game->player);
+    map = game->map;
+    y = 1;
+    while(y <= map->y)
+    {
+        x = 1;
+        while(x <= map->x)
+        {
+            if (get_value(map, x, y) == 'P')
+            {
+                player->x_pos = x;
+                player->y_pos = y;
+            }
+            x++;
+        }
+        y++;
+    }
+}
