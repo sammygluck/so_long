@@ -1,11 +1,4 @@
 #include "so_long.h"
-typedef struct s_img_types {
-    void *player;
-    void *collectible;
-    void *exit;
-    void *wall;
-    void *floor;
-} t_img_types;
 
 static void set_image_values(void *mlx, t_img_types *images)
 {
