@@ -75,10 +75,8 @@ static void move_down(t_game *game)
     else if (get_value(game->map, x, y + 1) == 'C')
         game->collectibles.found_collectibles += 1;
     else if (get_value(game->map, x, y + 1) == 'E')
-    {
         if (game->collectibles.found_collectibles == game->collectibles.collectible_count)
             ft_printf("you won the game\n");
-    }
     set_value(game->map, '0', x, y);
     set_value(game->map, 'P', x, y + 1);
     game->player.y_pos = y + 1;
@@ -95,6 +93,7 @@ int hook_actions(int keycode, t_game *game)
         move_right(game);
     else if (keycode == 115 || keycode == 65364)
         move_down(game);
-    printf("%i\n", game->map->x);
+    ft_printf("Collectible count: %i\n", game->collectibles.collectible_count);
+    ft_printf("Found collectibles: %i\n", game->collectibles.found_collectibles);
     return (0);
 }
