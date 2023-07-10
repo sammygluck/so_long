@@ -9,8 +9,8 @@ int main(int argc, char **argv)
     map = malloc(sizeof (t_map));
     if (!map)
         ft_printf("error to be handled still");
-    init_map(map);
     game.map = map;
+    init_map(&game);
     map_to_window(&game);
     ft_printf("\ndatamap: %s", game.map->map);
     //map_to_window();

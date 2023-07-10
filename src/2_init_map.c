@@ -23,13 +23,12 @@ static void add_line_to_map(char *line, t_map *map)
     strip_newline(line);
     if (map->y == 0)
     {
-        map->map = malloc(ft_strlen(line));
-        //make sure we deal correctly with the error
-        if (!(map->map))
-            return ;
+        // map->map = malloc(ft_strlen(line) + 1);
+        // //make sure we deal correctly with the error
+        // if (!(map->map))
+        //     return ;
         map->x = ft_strlen(line);
         //validate the length (make sure it's the minimum required length) at least 4 if not more
-
         map->map = ft_strdup(line);
          //should we free line now or in the parent of this function (current implemenation: parent at the end)
     }
