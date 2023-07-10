@@ -17,6 +17,7 @@ static void move_left(t_game *game)
             ft_printf("you won the game\n");
     set_value(game->map, '0', x, y);
     set_value(game->map, 'P', x - 1, y);
+    game->player.x_pos = x - 1;
     place_images(game->mlx, game->mlx_win, game->map, game->images);
 
 }
@@ -37,6 +38,7 @@ static void move_right(t_game *game)
             ft_printf("you won the game\n");
     set_value(game->map, '0', x, y);
     set_value(game->map, 'P', x + 1, y);
+    game->player.x_pos = x + 1;
     place_images(game->mlx, game->mlx_win, game->map, game->images);
     
 }
@@ -57,6 +59,7 @@ static void move_up(t_game *game)
             ft_printf("you won the game\n");
     set_value(game->map, '0', x, y);
     set_value(game->map, 'P', x, y - 1);
+    game->player.y_pos = y - 1;
     place_images(game->mlx, game->mlx_win, game->map, game->images);
 }
 
@@ -72,10 +75,13 @@ static void move_down(t_game *game)
     else if (get_value(game->map, x, y + 1) == 'C')
         game->collectibles.found_collectibles += 1;
     else if (get_value(game->map, x, y + 1) == 'E')
+    {
         if (game->collectibles.found_collectibles == game->collectibles.collectible_count)
             ft_printf("you won the game\n");
+    }
     set_value(game->map, '0', x, y);
     set_value(game->map, 'P', x, y + 1);
+    game->player.y_pos = y + 1;
     place_images(game->mlx, game->mlx_win, game->map, game->images);
 }
 
