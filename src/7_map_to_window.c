@@ -29,7 +29,7 @@ static void setup_image(void *mlx, void *mlx_win, t_img_types images, t_map *map
         printf("error setup image %c\n", get_value(map, x, y));
 }
 
-static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images)
+int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images)
 {
     int y;
     int x;

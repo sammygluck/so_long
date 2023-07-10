@@ -11,6 +11,14 @@ char get_value(t_map *map, int x, int y)
     return (value);
 }
 
+void set_value(t_map *map, char value, int x, int y)
+{
+    int index;
+
+    index = (y - 1) * map->x + (x - 1);
+    map->map[index] = value;
+}
+
 void set_player_start_position(t_game *game)
 {
     int y;
