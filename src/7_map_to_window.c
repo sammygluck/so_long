@@ -1,15 +1,4 @@
 #include "so_long.h"
-
-// typedef struct s_img {
-//     void *img;
-//     char *addr;
-//     int bits_per_pixel;
-//     int line_length;
-//     int endian;
-//     int img_width;
-//     int img_height;
-// } t_img;
-
 typedef struct s_img_types {
     void *player;
     void *collectible;
@@ -53,7 +42,6 @@ static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images
     int x;
 
     y = 0;
-
     while(y < map->y)
     {
         x = 0;
@@ -68,17 +56,15 @@ static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images
 }
 
 
-void map_to_window(t_map *data)
+void map_to_window(t_game *game)
 {
-    void *mlx;
-    void *mlx_win;
+   
     t_img_types images;
 
-    mlx = mlx_init();
-    //height and width need to be dynamic based on the x and y length
-    mlx_win = mlx_new_window(mlx, data->x * 32, data->y * 32, "so_long");
-    set_image_values(mlx, &images);
-    place_images(mlx, mlx_win, data, images);
-    mlx_loop(mlx);
-
+    game->mlx = mlx_init();
+    game->mlx_win = mlx_new_window(game->mlx, game->map->x * 32, game->map->y * 32, "so_long");
+    set_image_values(game->mlx, &images);
+    place_images(game->mlx, game->mlx_win, game->map, images);
+    //hook
+    mlx_loop(game->mlx);
 }

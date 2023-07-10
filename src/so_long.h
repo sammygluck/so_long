@@ -17,11 +17,22 @@ typedef struct s_map
     int y;
 } t_map;
 
-typedef struct s_master
-{
-    t_map   *map;
+typedef struct s_img_types {
+    void *player;
+    void *collectible;
+    void *exit;
+    void *wall;
+    void *floor;
+} t_img_types;
 
-} t_master;
+typedef struct s_game
+{
+    void *mlx;
+    void *mlx_win;
+    t_map   *map;
+    t_img_types images;
+
+} t_game;
 
 void    init_map(t_map *map);
 char get_value(t_map *map, int x, int y);
@@ -31,6 +42,6 @@ int validate_contents(t_map *map);
 int validate_map(t_map *map);
 void check_input(int argc, char **argv);
 
-void map_to_window(t_map *data);
+void map_to_window(t_game *game);
 
 #endif
