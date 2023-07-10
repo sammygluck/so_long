@@ -58,12 +58,9 @@ static int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images
 
 void map_to_window(t_game *game)
 {
-   
-    t_img_types images;
-
     game->mlx = mlx_init();
     game->mlx_win = mlx_new_window(game->mlx, game->map->x * 32, game->map->y * 32, "so_long");
-    set_image_values(game->mlx, &images);
+    set_image_values(game->mlx, &(game->images));
     place_images(game->mlx, game->mlx_win, game->map, images);
     //hook
     mlx_loop(game->mlx);
