@@ -14,7 +14,7 @@ static void move_left(t_game *game)
         return ;
     set_value(game->map, '0', x, y);
     set_value(game->map, 'P', x - 1, y);
-    
+    place_images(game->mlx, game->mlx_win, game->map, game->images);
 
 }
 
