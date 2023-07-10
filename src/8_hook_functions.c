@@ -5,8 +5,6 @@ static void move_left(t_game *game)
 {
     int x;
     int y;
-    char first;
-    char second;
 
     x = game->player.x_pos;
     y = game->player.y_pos;
