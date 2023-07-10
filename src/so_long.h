@@ -31,6 +31,11 @@ typedef struct s_player {
     int moves;
 } t_player;
 
+typedef struct s_collectibles {
+    int collectible_count;
+    int found_collectibles;
+} t_collectibles;
+
 typedef struct s_game
 {
     void *mlx;
@@ -38,7 +43,7 @@ typedef struct s_game
     t_map   *map;
     t_img_types images;
     t_player player;
-    
+    t_collectibles collectibles; 
 } t_game;
 
 void    init_map(t_game *game);
@@ -50,6 +55,7 @@ int validate_contents(t_map *map);
 int validate_map(t_map *map);
 void check_input(int argc, char **argv);
 void set_player_start_position(t_game *game);
+void set_collectible_count(t_game *game);
 
 void map_to_window(t_game *game);
 int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images);

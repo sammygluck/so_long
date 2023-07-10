@@ -44,3 +44,27 @@ void set_player_start_position(t_game *game)
         y++;
     }
 }
+
+void set_collectible_count(t_game *game)
+{
+    int y;
+    int x;
+    t_map *map;
+    t_collectibles *collectibles;
+
+    collectibles = &(game->collectibles);
+    collectibles->collectible_count = 0;
+    map = game->map;
+    y = 1;
+    while(y <= map->y)
+    {
+        x = 1;
+        while(x <= map->x)
+        {
+            if (get_value(map, x, y) == 'C')
+                collectibles->collectible_count += 1;
+            x++;
+        }
+        y++;
+    }
+}

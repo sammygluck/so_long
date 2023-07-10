@@ -23,7 +23,6 @@ static void add_line_to_map(char *line, t_map *map)
     strip_newline(line);
     if (map->y == 0)
     {
-        // map->map = malloc(ft_strlen(line) + 1);
         // //make sure we deal correctly with the error
         // if (!(map->map))
         //     return ;
@@ -41,12 +40,7 @@ static void add_line_to_map(char *line, t_map *map)
             ft_printf("Error: x length not equal");
         free(tmp);
         map->map = new_line;
-    }
-
-    //other lines
-    //check if each x value is the same as first
-    // join to the already existing string
-    
+    }    
 }
 
 void    init_map(t_game *game)
@@ -63,10 +57,6 @@ void    init_map(t_game *game)
     //might need to find a better place for this potentially:
     map->x = 0;
     map->y = 0;
-    
-    //call gnl until end
-    //for every call we'll join unto the previous string
-    //we also have to differentiate between the first, last and rest of the strings
     while (1)
     {
         line = get_next_line(fd);
@@ -77,6 +67,7 @@ void    init_map(t_game *game)
         map->y += 1;
     }
     set_player_start_position(game);
+    void set_collectible_count(game);
     print_map(map);
     if(!validate_map(map))
         ft_printf("something wrong with map");
