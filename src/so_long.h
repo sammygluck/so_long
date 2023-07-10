@@ -43,5 +43,6 @@ int validate_map(t_map *map);
 void check_input(int argc, char **argv);
 
 void map_to_window(t_game *game);
+int hook_actions(int keycode, t_game *game);
 
 #endif
