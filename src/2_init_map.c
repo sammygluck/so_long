@@ -70,5 +70,5 @@ void    init_map(t_game *game)
     set_collectible_count(game);
     print_map(map);
     if(!validate_map(game))
-        ft_printf("something wrong with map");
+        ft_printf("something wrong with map\n");
 }

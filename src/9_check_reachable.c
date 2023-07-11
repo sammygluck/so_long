@@ -33,6 +33,7 @@ int check_all_reachable(t_game *game)
         all_reachable = 0;
     if (get_char_count(flood_map, 'E') != 0)
         all_reachable = 0;
+    print_map(flood_map);
     free (flood_map);
     return (all_reachable);
 }
