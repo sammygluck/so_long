@@ -1,6 +1,6 @@
 #include "so_long.h"
 
-static int get_char_count(char *string, char character)
+int get_char_count(char *string, char character)
 {
     int i;
     int count;
@@ -46,11 +46,19 @@ int validate_contents(t_map *map)
 
 }
 
-int validate_map(t_map *map)
+int validate_map(t_game *game)
 {
+    char *map;
+
+    map = game->map;
     if (!validate_borders(map))
         return (0);
     if (!validate_contents(map))
         return (0);
+    if (!check_all_reachable(game))
+    {
+        ft_printf("not all reachable\n");
+        return (0);
+    }
     return (1);
 }

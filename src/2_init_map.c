@@ -69,6 +69,6 @@ void    init_map(t_game *game)
     set_player_start_position(game);
     set_collectible_count(game);
     print_map(map);
-    if(!validate_map(map))
+    if(!validate_map(game))
         ft_printf("something wrong with map");
 }
