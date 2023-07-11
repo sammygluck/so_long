@@ -8,7 +8,7 @@ static void flood_fill(t_game *game, char *visited, int x, int y)
 
     map = game->map->map;
     width = game->map->y;
-    index = y * width + x;
+    index = (y - 1) * width + (x - 1);
 
     if (map[index] == '1' || visited[index] == 't')
         return ;
