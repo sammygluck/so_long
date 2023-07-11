@@ -18,6 +18,7 @@ static void move_left(t_game *game)
     set_value(game->map, '0', x, y);
     set_value(game->map, 'P', x - 1, y);
     game->player.x_pos = x - 1;
+    game->player.moves += 1;
     place_images(game->mlx, game->mlx_win, game->map, game->images);
 
 }
@@ -39,6 +40,7 @@ static void move_right(t_game *game)
     set_value(game->map, '0', x, y);
     set_value(game->map, 'P', x + 1, y);
     game->player.x_pos = x + 1;
+    game->player.moves += 1;
     place_images(game->mlx, game->mlx_win, game->map, game->images);
     
 }
@@ -60,6 +62,7 @@ static void move_up(t_game *game)
     set_value(game->map, '0', x, y);
     set_value(game->map, 'P', x, y - 1);
     game->player.y_pos = y - 1;
+    game->player.moves += 1;
     place_images(game->mlx, game->mlx_win, game->map, game->images);
 }
 
@@ -80,6 +83,7 @@ static void move_down(t_game *game)
     set_value(game->map, '0', x, y);
     set_value(game->map, 'P', x, y + 1);
     game->player.y_pos = y + 1;
+    game->player.moves += 1;
     place_images(game->mlx, game->mlx_win, game->map, game->images);
 }
 
@@ -95,5 +99,6 @@ int hook_actions(int keycode, t_game *game)
         move_down(game);
     ft_printf("Collectible count: %i\n", game->collectibles.collectible_count);
     ft_printf("Found collectibles: %i\n", game->collectibles.found_collectibles);
+    ft_printf("Total moves: %i\n", game->player.moves);
     return (0);
 }
