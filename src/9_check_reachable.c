@@ -10,6 +10,9 @@ static void flood_fill(t_game *game, char *visited, int x, int y)
     width = game->map->y;
     index = (y - 1) * width + (x - 1);
     ft_printf("map[i] %c\n", map[index]);
+    ft_printf("index: %i\n", index);
+    ft_printf("x: %i\n", x);
+    ft_printf("y: %i\n", y);
     if (map[index] == '1' || visited[index] == 't')
         return ;
 
