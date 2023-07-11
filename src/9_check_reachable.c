@@ -5,6 +5,7 @@ static void flood_fill(t_game *game, char *visited, int x, int y)
     int index;
     int width;
     char *map;
+    t_map print;
 
     map = game->map->map;
     width = game->map->y;
@@ -14,7 +15,10 @@ static void flood_fill(t_game *game, char *visited, int x, int y)
         return ;
 
     visited[index] = 't';
-
+    print.map = visited;
+    print.x = game->map->x;
+    print.y = game->map->y;
+    print_map(&print);
     flood_fill(game, visited, x + 1, y);
     flood_fill(game, visited, x - 1, y);
     flood_fill(game, visited, x, y + 1);
