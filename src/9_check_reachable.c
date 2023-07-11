@@ -7,8 +7,8 @@ static void flood_fill(t_game *game, char *visited, int x, int y)
     char *map;
 
     map = game->map->map;
-    width = game->map->y;
-    index = y  * width + x;
+    width = game->map->x;
+    index = (y - 1)  * width + (x - 1);
     ft_printf("map[i] %c\n", map[index]);
     ft_printf("index: %i\n", index);
     ft_printf("x: %i\n", x);
