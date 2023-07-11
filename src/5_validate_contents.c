@@ -48,7 +48,7 @@ int validate_contents(t_map *map)
 
 int validate_map(t_game *game)
 {
-    char *map;
+    t_map *map;
 
     map = game->map;
     if (!validate_borders(map))

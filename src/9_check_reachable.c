@@ -24,9 +24,7 @@ static void flood_fill(t_game *game, char *visited, int x, int y)
 int check_all_reachable(t_game *game)
 {
     char *flood_map;
-    char *map;
     int all_reachable;
-    int i;
 
     all_reachable = 1;
     flood_map = ft_strdup(game->map->map);
