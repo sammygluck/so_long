@@ -1,4 +1,4 @@
-#include <stdio.h>
+
 //the question is to read and render or to read, copy into structure, array, list, whatnot and then to read from there
 // the question is also how many times it needs to be accessed (we can do a read on each access), but for example 
 // backtracking and so forth I don't think we should read over and over.
@@ -12,3 +12,39 @@
 // and also rules for the game i.e. no going into walls, or eating the token will give you an extra point or reaching the exit means end of game
 
 //I must make sure that the program is leak free on my end
+//-----------------------------------------------------------------------------------------------
+//TODO:
+/*
+1. PARSING STUFF
+    a. make sure to be able to give cmd file input and handle no exist and no permission errors
+2. GUI STUFF
+    a. make sure the esc. and x button work
+    b. make sure I can minimize and maximize without blackout
+    c. I don't know if this is included in b., but make sure overlap of other windows is handled
+    d. Customize the graphical units to my personal taste
+    e. add the mlx-loop (I think it's necessary)
+3. GAME LOGIC STUFF
+    a. output steps taken to shell (0 also?)
+    b. deal with exit reached when all collectible are found
+        i. exit gracefully
+        ii. print on screen
+    c. open exit when all collectibles are found
+4. ERROR MANAGEMENT
+    a. find potential error spots
+    b. when error found
+        i. free appropriate stuff
+        ii. print error message
+        iii. exit gracefully
+        iv. mlx-specific: find out how to clean up mlx gracefully
+    c. also double check the return values of things such as ft_strjoin and ft_strdup as they can have a malloc
+5. PROJECT STUFF
+    a. double check makefile
+    b. double check all names
+    c. norminette check everything
+    d. figure out how to deal with mlx on mac vs linux
+    e. check for leaks
+    f. test appropriately
+
+
+
+*/
