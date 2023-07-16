@@ -69,9 +69,4 @@ void map_to_window(t_game *game)
     mlx_hook(game->mlx_win, 17, 0, close_window, game);
     mlx_loop_hook(game->mlx, place_images_loop, game);
     mlx_loop(game->mlx);
-    if (game->mlx)
-    {
-        mlx_destroy_display(game->mlx);
-        free(game->mlx);
-    }
 }
