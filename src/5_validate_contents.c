@@ -32,7 +32,7 @@ static int all_valid_char(char *string)
 
 int validate_contents(t_map *map)
 {
-    if (!map->map[0])
+    if (!map->map)
         return (1);
     if (!all_valid_char(map->map))
         return (0);
