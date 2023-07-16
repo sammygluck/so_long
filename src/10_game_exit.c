@@ -49,7 +49,10 @@ int game_exit(t_game *game)
         mlx_destroy_window(game->mlx, game->mlx_win);
     //3. Destroy mlx
     if (game->mlx)
+    {
+        mlx_destroy_display(game->mlx);
         free(game->mlx);
+    }
     //4. free map
     if (game->map)
         free_map(game->map);
