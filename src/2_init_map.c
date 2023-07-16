@@ -45,15 +45,20 @@ static void add_line_to_map(char *line, t_map *map)
 
 void    init_map(t_game *game)
 {
-    
     char *line;
     int fd;
     t_map *map;
 
     map = game->map;
-    fd = open("map.ber", O_RDONLY);
     //error check
- 
+    fd = open("map.ber", O_RDONLY);
+    if (fd < 0)
+    {
+        //print error, free and exit; double check;
+        ft_printf("Error: %s\n", strerror(errno));
+        free(map);
+        exit(EXIT_FAILURE);
+    }
     //might need to find a better place for this potentially:
     map->x = 0;
     map->y = 0;

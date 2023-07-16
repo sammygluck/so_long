@@ -97,8 +97,9 @@ int hook_actions(int keycode, t_game *game)
         move_right(game);
     else if (keycode == 115 || keycode == 65364)
         move_down(game);
-    ft_printf("Collectible count: %i\n", game->collectibles.collectible_count);
-    ft_printf("Found collectibles: %i\n", game->collectibles.found_collectibles);
-    ft_printf("Total moves: %i\n", game->player.moves);
+    // ft_printf("Collectible count: %i\n", game->collectibles.collectible_count);
+    // ft_printf("Found collectibles: %i\n", game->collectibles.found_collectibles);
+    // ft_printf("Total moves: %i\n", game->player.moves);
+    ft_printf("Keycode: %i", keycode);
     return (0);
 }
