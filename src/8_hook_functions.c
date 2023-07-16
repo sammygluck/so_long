@@ -97,6 +97,7 @@ int hook_actions(int keycode, t_game *game)
         move_right(game);
     else if (keycode == 115 || keycode == 65364)
         move_down(game);
+    //must improve error
     else if (keycode == 65307)
         exit(EXIT_FAILURE);
     // ft_printf("Collectible count: %i\n", game->collectibles.collectible_count);
@@ -104,4 +105,18 @@ int hook_actions(int keycode, t_game *game)
     // ft_printf("Total moves: %i\n", game->player.moves);
     ft_printf("Keycode: %i", keycode);
     return (0);
+}
+
+//basic for testing
+int expose_window(t_game *game)
+{
+    place_images(game->mlx, game->mlx_win, game->map, game->images);
+    return (0);
+}
+
+//basic for testing
+void close_window(t_game *game)
+{
+    free(game->map);
+    exit(EXIT_FAILURE);
 }
