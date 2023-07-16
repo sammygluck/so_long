@@ -56,6 +56,6 @@ int game_exit(t_game *game)
     //4. free map
     if (game->map)
         free_map(game->map);
-    //exit(EXIT_SUCCESS);
+    exit(EXIT_SUCCESS);
     return (0); 
 }
