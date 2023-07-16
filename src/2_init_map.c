@@ -1,27 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   2_init_map.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/12 10:44:31 by sgluck            #+#    #+#             */
+/*   Updated: 2023/07/12 10:48:01 by sgluck           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 //is this the optimal solution?
-static void strip_newline(char *line)
+static void	strip_newline(char *line)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (line[i])
-    {
-        if (line[i] == '\n')
-            line[i] = '\0';
-        i++;
-    }
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] == '\n')
+			line[i] = '\0';
+		i++;
+	}
 }
 
-static void add_line_to_map(char *line, t_map *map)
+static void	add_line_to_map(char *line, t_map *map)
 {
+	char	*tmp;
+	char	*new_line;
 
-    char *tmp;
-    char *new_line;
-
-    strip_newline(line);
-    if (map->y == 0)
+	strip_newline(line);
+	if (map->y == 0)
     {
         // //make sure we deal correctly with the error
         // if (!(map->map))
