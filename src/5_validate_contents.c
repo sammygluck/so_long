@@ -40,8 +40,6 @@ int validate_contents(t_map *map)
         return (0);
     if (get_char_count(map->map, 'P') != 1)
         return (0);
-    
-    //also set the character count in the variable in the future struct to be made.
     return (1);
 
 }
