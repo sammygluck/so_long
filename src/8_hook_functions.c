@@ -110,6 +110,7 @@ int hook_actions(int keycode, t_game *game)
 //basic for testing
 int expose_window(t_game *game)
 {
+    ft_printf("exposed\n");
     place_images(game->mlx, game->mlx_win, game->map, game->images);
     return (0);
 }
