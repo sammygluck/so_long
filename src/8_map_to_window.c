@@ -48,6 +48,12 @@ int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images)
     return (1);
 }
 
+int place_images_loop(t_game *game)
+{
+    place_images(game->mlx, game->mlx_win, game->map, game->images);
+    return (0);
+}
+
 
 void map_to_window(t_game *game)
 {
@@ -61,5 +67,11 @@ void map_to_window(t_game *game)
     mlx_hook(game->mlx_win, 12, 0, expose_window, game);
     mlx_key_hook(game->mlx_win, hook_actions, game);
     mlx_hook(game->mlx_win, 17, 0, close_window, game);
+    mlx_loop_hook(game->mlx, place_images_loop, game);
     mlx_loop(game->mlx);
+    if (game->mlx)
+    {
+        mlx_destroy_display(game->mlx);
+        free(game->mlx);
+    }
 }
