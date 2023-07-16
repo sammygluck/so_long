@@ -32,6 +32,8 @@ static int all_valid_char(char *string)
 
 int validate_contents(t_map *map)
 {
+    if (!map->map[0])
+        return (1);
     if (!all_valid_char(map->map))
         return (0);
     if (get_char_count(map->map, 'C') < 1)
