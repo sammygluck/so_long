@@ -31,7 +31,7 @@ static int destroy_images(t_game *game)
     return (0);
 }
 
-static void free_map(t_map *map)
+void free_map(t_map *map)
 {
     if (map->map)
         free(map->map);

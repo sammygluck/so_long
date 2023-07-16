@@ -46,6 +46,7 @@ typedef struct s_game
     t_img_types images;
     t_player player;
     t_collectibles collectibles; 
+    char *filename;
 } t_game;
 
 void    init_map(t_game *game);
@@ -67,5 +68,6 @@ int hook_actions(int keycode, t_game *game);
 int close_window(t_game *game);
 int expose_window(t_game *game);
 int game_exit(t_game *game);
+void free_map(t_map *map);
 
 #endif

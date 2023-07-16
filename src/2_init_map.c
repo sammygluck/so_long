@@ -12,7 +12,6 @@
 
 #include "so_long.h"
 
-//is this the optimal solution?
 static void	strip_newline(char *line)
 {
 	int	i;
@@ -26,6 +25,7 @@ static void	strip_newline(char *line)
 	}
 }
 
+//have a look at the failures here for leaks very possible as we exit before freeing certain things
 static void	add_line_to_map(char *line, t_map *map)
 {
 	char	*tmp;
@@ -34,21 +34,17 @@ static void	add_line_to_map(char *line, t_map *map)
 	strip_newline(line);
 	if (map->y == 0)
     {
-        // //make sure we deal correctly with the error
-        // if (!(map->map))
-        //     return ;
         map->x = ft_strlen(line);
-        //validate the length (make sure it's the minimum required length) at least 4 if not more
         map->map = ft_strdup(line);
-         //should we free line now or in the parent of this function (current implemenation: parent at the end)
+        if (!map->map)
+            init_error(map, "strdup failure");
     }
     else
     {
         tmp = map->map;
         new_line = ft_strjoin(map->map, line);
-        // need to cook a correct error formula for this
         if (ft_strlen(line) != (size_t)map->x)
-            ft_printf("Error: x length not equal");
+            init_error(map, "the map isn't a square");
         free(tmp);
         map->map = new_line;
     }    
@@ -61,16 +57,9 @@ void    init_map(t_game *game)
     t_map *map;
 
     map = game->map;
-    //error check
-    fd = open("map.ber", O_RDONLY);
+    fd = open(game->filename, O_RDONLY);
     if (fd < 0)
-    {
-        //print error, free and exit; double check;
-        ft_printf("Error: %s\n", strerror(errno));
-        free(map);
-        exit(EXIT_FAILURE);
-    }
-    //might need to find a better place for this potentially:
+       init_error(game->map, strerror(errno));
     map->x = 0;
     map->y = 0;
     while (1)
@@ -86,5 +75,5 @@ void    init_map(t_game *game)
     set_collectible_count(game);
     print_map(map);
     if(!validate_map(game))
-        ft_printf("something wrong with map\n");
+        init_error(game->map, "map hasn't validated");
 }

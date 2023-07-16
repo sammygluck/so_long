@@ -54,9 +54,6 @@ int validate_map(t_game *game)
     if (!validate_contents(map))
         return (0);
     if (!check_all_reachable(game))
-    {
-        ft_printf("not all reachable\n");
         return (0);
-    }
     return (1);
 }
