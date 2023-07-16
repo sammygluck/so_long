@@ -64,7 +64,6 @@ void map_to_window(t_game *game)
         //exit_free
     place_images(game->mlx, game->mlx_win, game->map, game->images);
     //hook
-    mlx_hook(game->mlx_win, 12, 0, expose_window, game);
     mlx_key_hook(game->mlx_win, hook_actions, game);
     mlx_hook(game->mlx_win, 17, 0, close_window, game);
     mlx_loop_hook(game->mlx, place_images_loop, game);
