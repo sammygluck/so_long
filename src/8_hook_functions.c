@@ -115,8 +115,9 @@ int expose_window(t_game *game)
 }
 
 //basic for testing
-void close_window(t_game *game)
+int close_window(t_game *game)
 {
     free(game->map);
     exit(EXIT_FAILURE);
+    return (0);
 }
