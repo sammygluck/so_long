@@ -107,18 +107,3 @@ int hook_actions(int keycode, t_game *game)
     return (0);
 }
 
-//basic for testing
-int expose_window(t_game *game)
-{
-    ft_printf("exposed\n");
-    place_images(game->mlx, game->mlx_win, game->map, game->images);
-    return (0);
-}
-
-//basic for testing
-int close_window(t_game *game)
-{
-    free(game->map);
-    exit(EXIT_FAILURE);
-    return (0);
-}
