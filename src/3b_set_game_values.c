@@ -37,6 +37,7 @@ void set_collectible_count(t_game *game)
     collectibles = &(game->collectibles);
     collectibles->collectible_count = 0;
     collectibles->found_collectibles = 0;
+    game->exit_open = 0;
     map = game->map;
     y = 1;
     while(y <= map->y)

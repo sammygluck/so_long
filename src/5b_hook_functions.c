@@ -1,6 +1,5 @@
 #include "so_long.h"
 
-
 static void move_left(t_game *game)
 {
     int x;
@@ -24,8 +23,6 @@ static void move_left(t_game *game)
     game->player.x_pos = x - 1;
     game->player.moves += 1;
     ft_printf("Total moves: %i\n", game->player.moves);
-    place_images(game->mlx, game->mlx_win, game->map, game->images);
-
 }
 
 static void move_right(t_game *game)
@@ -50,9 +47,7 @@ static void move_right(t_game *game)
     set_value(game->map, 'P', x + 1, y);
     game->player.x_pos = x + 1;
     game->player.moves += 1;
-    ft_printf("Total moves: %i\n", game->player.moves);
-    place_images(game->mlx, game->mlx_win, game->map, game->images);
-    
+    ft_printf("Total moves: %i\n", game->player.moves);    
 }
 
 static void move_up(t_game *game)
@@ -78,7 +73,6 @@ static void move_up(t_game *game)
     game->player.y_pos = y - 1;
     game->player.moves += 1;
     ft_printf("Total moves: %i\n", game->player.moves);
-    place_images(game->mlx, game->mlx_win, game->map, game->images);
 }
 
 static void move_down(t_game *game)
@@ -104,7 +98,6 @@ static void move_down(t_game *game)
     game->player.y_pos = y + 1;
     game->player.moves += 1;
     ft_printf("Total moves: %i\n", game->player.moves);
-    place_images(game->mlx, game->mlx_win, game->map, game->images);
 }
 
 int hook_actions(int keycode, t_game *game)
@@ -119,6 +112,9 @@ int hook_actions(int keycode, t_game *game)
         move_down(game);
     else if (keycode == 65307)
         game_exit_success(game);
-    //ft_printf("Keycode: %i", keycode);
+    if (game->collectibles.collectible_count == game->collectibles.found_collectibles && !game->exit_open)
+        open_exit(game);
+    place_images(game->mlx, game->mlx_win, game->map, game->images);
     return (0);
 }
+

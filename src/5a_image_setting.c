@@ -9,6 +9,20 @@ void check_images(t_game *game)
         game_exit_failure(game, "failure to setup images");
 }
 
+void open_exit(t_game *game)
+{
+    int w;
+    int h;
+    t_img_types *images;
+
+    images = &(game->images);
+    mlx_destroy_image(game->mlx, game->images.exit);
+    images->exit = mlx_xpm_file_to_image(game->mlx, "assets/sprites/player/open-exit.xpm", &w, &h);
+    if (!images->exit)
+        game_exit_failure(game, "failure to setup open exit"); 
+    game->exit_open = 1;
+}
+
 void set_image_values(void *mlx, t_img_types *images)
 {
     int width;
@@ -22,7 +36,7 @@ void set_image_values(void *mlx, t_img_types *images)
 
 }
 
-//double check this
+//double check this replace a lot of the arguments with t_game
 static void setup_image(void *mlx, void *mlx_win, t_img_types images, t_map *map, int x, int y)
 {
     if (get_value(map, x + 1, y + 1) == '1')
