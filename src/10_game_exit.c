@@ -51,3 +51,12 @@ int game_exit(t_game *game)
     exit(EXIT_SUCCESS);
     return (0); 
 }
+
+void win_game(t_game *game)
+{
+    int count;
+
+    count = game->collectibles.collectible_count;
+    ft_printf("YOU WON!!!!\nYou've collected all %i collectibles\n", count);
+    game_exit(game);
+}
