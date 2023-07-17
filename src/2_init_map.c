@@ -26,28 +26,31 @@ static void	strip_newline(char *line)
 }
 
 //have a look at the failures here for leaks very possible as we exit before freeing certain things
-static void	add_line_to_map(char *line, t_map *map)
+static int	add_line_to_map(char *line, t_map *map)
 {
+    int     error;
 	char	*tmp;
 	char	*new_line;
 
+    error = 1;
 	strip_newline(line);
 	if (map->y == 0)
     {
         map->x = ft_strlen(line);
         map->map = ft_strdup(line);
         if (!map->map)
-            init_error(map, "strdup failure");
+            add_line_error(line, new_line, map);
     }
     else
     {
         tmp = map->map;
         new_line = ft_strjoin(map->map, line);
-        if (ft_strlen(line) != (size_t)map->x)
-            init_error(map, "the map isn't a square");
+        if (ft_strlen(line) != (size_t)map->x || !new_line)
+            add_line_error(line, new_line, map);
         free(tmp);
         map->map = new_line;
     }    
+    return (error);
 }
 
 void    init_map(t_game *game)
