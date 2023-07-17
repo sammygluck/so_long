@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   6_errors.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/17 15:17:52 by sgluck            #+#    #+#             */
+/*   Updated: 2023/07/17 15:18:15 by sgluck           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-void init_error(t_map *map, char *string)
+void	init_error(t_map *map, char *string)
 {
-    free_map(map);
-    ft_printf("Error\n%s\n", string);
-    exit(EXIT_FAILURE);
+	free_map(map);
+	ft_printf("Error\n%s\n", string);
+	exit(EXIT_FAILURE);
 }
