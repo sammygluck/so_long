@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		init_error(map, "malloc map");
 	game.map = map;
 	game.filename = argv[1];
-	init_map(&game);
+	init_game(&game);
 	map_to_window(&game);
 	ft_printf("\ndatamap: %s", game.map->map);
     //map_to_window();

@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void    init_map(t_game *game)
+void    init_game(t_game *game)
 {
     int fd;
     int error;

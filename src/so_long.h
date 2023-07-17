@@ -49,7 +49,7 @@ typedef struct s_game
     char *filename;
 } t_game;
 
-void    init_map(t_game *game);
+void    init_game(t_game *game);
 char get_value(t_map *map, int x, int y);
 void set_value(t_map *map, char value, int x, int y);
 int print_map(t_map *map);
@@ -71,7 +71,10 @@ int hook_actions(int keycode, t_game *game);
 int close_window(t_game *game);
 int expose_window(t_game *game);
 int game_exit(t_game *game);
+void game_exit_success(t_game *game);
+void game_exit_failure(t_game *game, char *message);
 void free_map(t_map *map);
+int destroy_images(t_game *game);
 void init_error(t_map *map, char *string);
 void add_line_error(char *line, char *newline, t_map *map);
 void win_game(t_game *game);
