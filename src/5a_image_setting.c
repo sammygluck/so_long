@@ -2,12 +2,10 @@
 
 int check_images(t_game *game)
 {
-    int error;
     t_img_types images;
 
-    error = 1;
     images = game->images;
-    if (!images.collectible || !images.exit || !images.floor || !images.player || !images.wall);
+    if (!images.collectible || !images.exit || !images.floor || !images.player || !images.wall)
         game_exit_failure(game, "failure to setup images");
 }
 
