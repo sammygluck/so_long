@@ -70,5 +70,6 @@ int expose_window(t_game *game);
 int game_exit(t_game *game);
 void free_map(t_map *map);
 void init_error(t_map *map, char *string);
+void win_game(t_game *game);
 
 #endif

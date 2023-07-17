@@ -127,3 +127,11 @@ int hook_actions(int keycode, t_game *game)
     return (0);
 }
 
+void win_game(t_game *game)
+{
+    int count;
+
+    count = game->collectibles.collectible_count;
+    ft_printf("YOU WON!!!!\n You've collected all %i collectibles\n", count);
+    game_exit(game);
+}
