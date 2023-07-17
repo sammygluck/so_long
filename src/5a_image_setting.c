@@ -1,6 +1,6 @@
 #include "so_long.h"
 
-int check_images(t_game *game)
+void check_images(t_game *game)
 {
     t_img_types images;
 

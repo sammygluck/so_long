@@ -67,7 +67,7 @@ void map_to_window(t_game *game);
 void set_image_values(void *mlx, t_img_types *images);
 int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images);
 int place_images_loop(t_game *game);
-int check_images(t_game *game);
+void check_images(t_game *game);
 int hook_actions(int keycode, t_game *game);
 int close_window(t_game *game);
 int expose_window(t_game *game);
