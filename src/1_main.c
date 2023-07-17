@@ -6,7 +6,7 @@
 /*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:37:41 by sgluck            #+#    #+#             */
-/*   Updated: 2023/07/12 10:37:44 by sgluck           ###   ########.fr       */
+/*   Updated: 2023/07/17 12:36:12 by sgluck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ int	main(int argc, char **argv)
 	init_game(&game);
 	map_to_window(&game);
 	ft_printf("\ndatamap: %s", game.map->map);
-    //map_to_window();
 }

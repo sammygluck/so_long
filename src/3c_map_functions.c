@@ -1,21 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   3c_map_functions.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/17 13:29:58 by sgluck            #+#    #+#             */
+/*   Updated: 2023/07/17 13:32:06 by sgluck           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-char get_value(t_map *map, int x, int y)
+char	get_value(t_map *map, int x, int y)
 {
-    char value;
-    int index;
+	int		index;
+	char	value;
 
     //what's if it's zero or less??
-    index = (y - 1) * map->x + (x - 1);
-    value = map->map[index];
-    return (value);
+	index = (y - 1) * map->x + (x - 1);
+	value = map->map[index];
+	return (value);
 }
 
-void set_value(t_map *map, char value, int x, int y)
+void	set_value(t_map *map, char value, int x, int y)
 {
-    int index;
+	int	index;
 
-    index = (y - 1) * map->x + (x - 1);
-    map->map[index] = value;
+	index = (y - 1) * map->x + (x - 1);
+	map->map[index] = value;
 }
-
