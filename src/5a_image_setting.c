@@ -17,7 +17,7 @@ void open_exit(t_game *game)
 
     images = &(game->images);
     mlx_destroy_image(game->mlx, game->images.exit);
-    images->exit = mlx_xpm_file_to_image(game->mlx, "assets/sprites/player/open-exit.xpm", &w, &h);
+    images->exit = mlx_xpm_file_to_image(game->mlx, "assets/sprites/open-exit.xpm", &w, &h);
     if (!images->exit)
         game_exit_failure(game, "failure to setup open exit"); 
     game->exit_open = 1;
