@@ -118,7 +118,7 @@ int hook_actions(int keycode, t_game *game)
         exit(EXIT_FAILURE);
     // ft_printf("Collectible count: %i\n", game->collectibles.collectible_count);
     // ft_printf("Found collectibles: %i\n", game->collectibles.found_collectibles);
-    // ft_printf("Total moves: %i\n", game->player.moves);
+    ft_printf("Total moves: %i\n", game->player.moves);
     //ft_printf("Keycode: %i", keycode);
     return (0);
 }
