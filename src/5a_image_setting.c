@@ -1,5 +1,16 @@
 #include "so_long.h"
 
+int check_images(t_game *game)
+{
+    int error;
+    t_img_types images;
+
+    error = 1;
+    images = game->images;
+    if (!images.collectible || !images.exit || !images.floor || !images.player || !images.wall);
+        game_exit_failure(game, "failure to setup images");
+}
+
 void set_image_values(void *mlx, t_img_types *images)
 {
     int width;
@@ -13,6 +24,7 @@ void set_image_values(void *mlx, t_img_types *images)
 
 }
 
+//double check this
 static void setup_image(void *mlx, void *mlx_win, t_img_types images, t_map *map, int x, int y)
 {
     if (get_value(map, x + 1, y + 1) == '1')
@@ -26,7 +38,7 @@ static void setup_image(void *mlx, void *mlx_win, t_img_types images, t_map *map
     else if (get_value(map, x + 1, y + 1) == 'E')
         mlx_put_image_to_window(mlx, mlx_win, images.exit, x * 32, y * 32);
     else
-        printf("error setup image %c\n", get_value(map, x, y));
+        ft_printf("error setup image %c\n", get_value(map, x, y));
 }
 
 int place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images)
