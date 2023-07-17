@@ -33,6 +33,7 @@ static int	add_line_to_map(char *line, t_map *map)
 	char	*new_line;
 
     error = 1;
+    new_line = NULL;
 	strip_newline(line);
 	if (map->y == 0)
     {
