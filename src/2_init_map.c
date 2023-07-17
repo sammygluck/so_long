@@ -79,12 +79,9 @@ static int set_map(t_game *game, int fd)
 
 void    init_map(t_game *game)
 {
-    char *line;
     int fd;
     int error;
-    t_map *map;
 
-    map = game->map;
     error = 1;
     fd = open(game->filename, O_RDONLY);
     if (fd < 0)
