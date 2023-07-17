@@ -14,7 +14,7 @@ void set_image_values(void *mlx, t_img_types *images)
     int width;
     int height;
 
-    images->player = mlx_xpm_file_to_image(mlx, "assets/sprites/player/front.xpm", &width, &height);
+    images->player = mlx_xpm_file_to_image(mlx, "assets/sprites/player/fron.xpm", &width, &height);
     images->collectible = mlx_xpm_file_to_image(mlx, "assets/sprites/coin-bag.xpm", &width, &height);
     images->exit = mlx_xpm_file_to_image(mlx, "assets/sprites/exit-closed.xpm", &width, &height);
     images->floor = mlx_xpm_file_to_image(mlx, "assets/sprites/floor.xpm", &width, &height);
