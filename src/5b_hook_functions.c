@@ -22,12 +22,12 @@ static void	move_left(t_game *game)
 	if (get_value(game->map, x - 1, y) == '1')
 		return ;
 	else if (get_value(game->map, x - 1, y) == 'C')
-		game->collectibles.found_collectibles += 1;
+		game->col.got += 1;
 	else if (get_value(game->map, x - 1, y) == 'E')
 	{
-		if (game->collectibles.found_collectibles == game->collectibles.collectible_count)
+		if (game->col.got == game->col.total)
 			win_game(game);
-		else if (game->collectibles.found_collectibles != game->collectibles.collectible_count)
+		else if (game->col.got != game->col.total)
 			return ;
 	}
 	set_value(game->map, '0', x, y);
@@ -47,12 +47,12 @@ static void	move_right(t_game *game)
 	if (get_value(game->map, x + 1, y) == '1')
 		return ;
 	else if (get_value(game->map, x + 1, y) == 'C')
-		game->collectibles.found_collectibles += 1;
+		game->col.got += 1;
 	else if (get_value(game->map, x + 1, y) == 'E')
 	{
-		if (game->collectibles.found_collectibles == game->collectibles.collectible_count)
+		if (game->col.got == game->col.total)
 			win_game(game);
-		else if (game->collectibles.found_collectibles != game->collectibles.collectible_count)
+		else if (game->col.got != game->col.total)
 			return ;
 	}
 	set_value(game->map, '0', x, y);
@@ -72,12 +72,12 @@ static void	move_up(t_game *game)
 	if (get_value(game->map, x, y - 1) == '1')
 		return ;
 	else if (get_value(game->map, x, y - 1) == 'C')
-		game->collectibles.found_collectibles += 1;
+		game->col.got += 1;
 	else if (get_value(game->map, x, y - 1) == 'E')
 	{
-		if (game->collectibles.found_collectibles == game->collectibles.collectible_count)
+		if (game->col.got == game->col.total)
 			win_game(game);
-		else if (game->collectibles.found_collectibles != game->collectibles.collectible_count)
+		else if (game->col.got != game->col.total)
 			return ;
 	}
 	set_value(game->map, '0', x, y);
@@ -97,12 +97,12 @@ static void	move_down(t_game *game)
 	if (get_value(game->map, x, y + 1) == '1')
 		return ;
 	else if (get_value(game->map, x, y + 1) == 'C')
-		game->collectibles.found_collectibles += 1;
+		game->col.got += 1;
 	else if (get_value(game->map, x, y + 1) == 'E')
 	{
-		if (game->collectibles.found_collectibles == game->collectibles.collectible_count)
+		if (game->col.got == game->col.total)
 			win_game(game);
-		else if (game->collectibles.found_collectibles != game->collectibles.collectible_count)
+		else if (game->col.got != game->col.total)
 			return ;
 	}
 	set_value(game->map, '0', x, y);
@@ -124,7 +124,7 @@ int	hook_actions(int keycode, t_game *game)
 		move_down(game);
 	else if (keycode == 65307)
 		game_exit_success(game);
-	if (game->collectibles.collectible_count == game->collectibles.found_collectibles && !game->exit_open)
+	if (game->col.total == game->col.got && !game->exit_open)
 		open_exit(game);
 	place_images(game->mlx, game->mlx_win, game->map, game->images);
 	return (0);

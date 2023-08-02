@@ -55,8 +55,18 @@ void	set_image_values(void *mlx, t_img_types *images)
 }
 
 //double check this replace a lot of the arguments with t_game
-static void	setup_image(void *mlx, void *mlx_win, t_img_types images, t_map *map, int x, int y)
+static void	setup_image(t_game *game, int x, int y)
 {
+	void *mlx;
+	void *mlx_win;
+	t_img_types images;
+	t_map *map;
+
+	mlx = game->mlx;
+	mlx_win = game->mlx_win;
+	images = game->images;
+	map = game->map;
+
 	if (get_value(map, x + 1, y + 1) == '1')
 		mlx_put_image_to_window(mlx, mlx_win, images.wall, x * 32, y * 32);
 	else if (get_value(map, x + 1, y + 1) == '0')
@@ -72,18 +82,22 @@ static void	setup_image(void *mlx, void *mlx_win, t_img_types images, t_map *map
 		ft_printf("error setup image %c\n", get_value(map, x, y));
 }
 
-int	place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images)
+int	place_images(t_game *game, t_map *map, t_img_types images)
 {
 	int	y;
 	int	x;
+	void *mlx;
+	void *mlx_win;
 
+	mlx = game->mlx;
+	mlx_win = game->mlx_win;
 	y = 0;
 	while (y < map->y)
 	{
 		x = 0;
 		while (x < map->x)
 		{
-			setup_image(mlx, mlx_win, images, map, x, y);
+			setup_image(game, x, y);
 			x++;
 		}
 		y++;
@@ -93,6 +107,6 @@ int	place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images)
 
 int	place_images_loop(t_game *game)
 {
-	place_images(game->mlx, game->mlx_win, game->map, game->images);
+	place_images(game, game->map, game->images);
 	return (0);
 }

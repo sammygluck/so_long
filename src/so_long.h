@@ -45,13 +45,13 @@ typedef struct s_player {
 }	t_player;
 
 typedef struct s_collectibles {
-	int	collectible_count;
-	int	found_collectibles;
+	int	total;
+	int	got;
 }	t_collectibles;
 
 typedef struct s_game
 {
-	t_collectibles	collectibles;
+	t_collectibles	col;
 	t_img_types		images;
 	t_map			*map;
 	t_player		player;
@@ -84,7 +84,7 @@ int		validate_map(t_game *game);
 int		set_map(t_game *game, int fd);
 int		get_char_count(char *string, char character);
 int		check_all_reachable(t_game *game);
-int		place_images(void *mlx, void *mlx_win, t_map *map, t_img_types images);
+int	place_images(t_game *game, t_map *map, t_img_types images);
 int		place_images_loop(t_game *game);
 int		hook_actions(int keycode, t_game *game);
 int		close_window(t_game *game);
