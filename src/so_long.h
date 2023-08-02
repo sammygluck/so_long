@@ -85,7 +85,7 @@ int		validate_map(t_game *game);
 int		set_map(t_game *game, int fd);
 int		get_char_count(char *string, char character);
 int		check_all_reachable(t_game *game);
-int		place_images(t_game *game, t_map *map, t_img_types images);
+int	place_images(t_game *game, t_map *map);
 int		place_images_loop(t_game *game);
 int		hook_actions(int keycode, t_game *game);
 int		close_window(t_game *game);

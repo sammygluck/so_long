@@ -12,15 +12,11 @@
 
 #include "so_long.h"
 
-int	place_images(t_game *game, t_map *map, t_img_types images)
+int	place_images(t_game *game, t_map *map)
 {
 	int		y;
 	int		x;
-	void	*mlx;
-	void	*mlx_win;
 
-	mlx = game->mlx;
-	mlx_win = game->mlx_win;
 	y = 0;
 	while (y < map->y)
 	{
@@ -37,6 +33,6 @@ int	place_images(t_game *game, t_map *map, t_img_types images)
 
 int	place_images_loop(t_game *game)
 {
-	place_images(game, game->map, game->images);
+	place_images(game, game->map);
 	return (0);
 }
