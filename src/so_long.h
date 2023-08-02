@@ -72,6 +72,7 @@ void	set_collectible_count(t_game *game);
 void	map_to_window(t_game *game);
 void	set_image_values(void *mlx, t_img_types *images);
 void	check_images(t_game *game);
+void	setup_image(t_game *game, int x, int y);
 void	game_exit_success(t_game *game);
 void	game_exit_failure(t_game *game, char *message);
 void	free_map(t_map *map);

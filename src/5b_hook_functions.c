@@ -126,6 +126,6 @@ int	hook_actions(int keycode, t_game *game)
 		game_exit_success(game);
 	if (game->col.total == game->col.got && !game->exit_open)
 		open_exit(game);
-	place_images(game->mlx, game->mlx_win, game->map, game->images);
+	place_images(game, game->map, game->images);
 	return (0);
 }
