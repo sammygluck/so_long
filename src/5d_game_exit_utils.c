@@ -16,7 +16,7 @@ void	win_game(t_game *game)
 {
 	int	count;
 
-	count = game->collectibles.collectible_count;
+	count = game->col.total;
 	ft_printf("YOU WON!!!!\nYou've collected all %i collectibles\n", count);
 	game_exit_success(game);
 }
