@@ -6,7 +6,7 @@
 /*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 15:00:58 by sgluck            #+#    #+#             */
-/*   Updated: 2023/07/17 15:01:01 by sgluck           ###   ########.fr       */
+/*   Updated: 2023/08/02 07:16:47 by sgluck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,15 @@ void	set_image_values(void *mlx, t_img_types *images)
 //double check this replace a lot of the arguments with t_game
 static void	setup_image(t_game *game, int x, int y)
 {
-	void *mlx;
-	void *mlx_win;
-	t_img_types images;
-	t_map *map;
+	void		*mlx;
+	void		*mlx_win;
+	t_map		*map;
+	t_img_types	images;
 
 	mlx = game->mlx;
 	mlx_win = game->mlx_win;
 	images = game->images;
 	map = game->map;
-
 	if (get_value(map, x + 1, y + 1) == '1')
 		mlx_put_image_to_window(mlx, mlx_win, images.wall, x * 32, y * 32);
 	else if (get_value(map, x + 1, y + 1) == '0')
@@ -84,10 +83,10 @@ static void	setup_image(t_game *game, int x, int y)
 
 int	place_images(t_game *game, t_map *map, t_img_types images)
 {
-	int	y;
-	int	x;
-	void *mlx;
-	void *mlx_win;
+	int		y;
+	int		x;
+	void	*mlx;
+	void	*mlx_win;
 
 	mlx = game->mlx;
 	mlx_win = game->mlx_win;
