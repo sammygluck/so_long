@@ -54,7 +54,6 @@ void	set_image_values(void *mlx, t_img_types *images)
 			"assets/sprites/wall.xpm", &width, &height);
 }
 
-//double check this replace a lot of the arguments with t_game
 void	setup_image(t_game *game, int x, int y)
 {
 	void		*mlx;
