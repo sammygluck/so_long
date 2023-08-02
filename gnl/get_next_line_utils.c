@@ -6,13 +6,13 @@
 /*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 16:22:36 by sgluck            #+#    #+#             */
-/*   Updated: 2023/03/01 17:58:20 by sgluck           ###   ########.fr       */
+/*   Updated: 2023/08/02 06:51:39 by sgluck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int ft_strlen_gnl(char *str)
+int	ft_strlen_gnl(char *str)
 {
 	int	i;
 
